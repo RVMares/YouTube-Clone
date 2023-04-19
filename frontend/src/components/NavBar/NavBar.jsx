@@ -12,7 +12,11 @@ const Navbar = () => {
       <ul>
         <li className="brand">
           <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-            <b>YouWatch</b>
+            {user ? (
+              <b>YouWatch {user.username}</b>
+            ) : (
+              <b>YouWatch</b>
+            )}
           </Link>
         </li>
         <li>
