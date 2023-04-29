@@ -1,9 +1,10 @@
 import React from 'react';
+import VideoList from '../VideoList/VideoList';
 
 const VideoMapper = ({videoArray}) => {
     return ( 
         <ul>
-            {videoArray.map(el => <VideoPage key={el.id.videoId} video ={el} />)}
+            {videoArray.map(el => <VideoList key={el.id.videoId} video ={el} />)}
         </ul>
      );
 }
