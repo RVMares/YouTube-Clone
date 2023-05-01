@@ -1,0 +1,14 @@
+h2{
+    font-size:small;
+}
+h2:hover{
+    color: steelblue;
+}
+.title{
+    color:black;
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+}
+.description{
+    color:darkslategray;
+}
