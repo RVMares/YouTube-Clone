@@ -1,21 +1,22 @@
 import './SearchBar.css'
 import useCustomForm from '../../hooks/useCustomForm';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-const SearchBar = ({searchInput, setSearchInput}) => {
-    const [formValues, handleInputChange, handleSubmit] = useCustomForm()
+const SearchBar = (props) => {
+    const [formData, handleSubmit, handleInputChange] = useCustomForm();
+    const navigate = useNavigate();
 
     return ( 
         <div>
             <form className='searchBar-form' onSubmit={handleSubmit}>
                 <input
-                    type='text'
-                    value={searchInput}
+                    type= 'text'
+                    value={formData.searchInput}
+                    className='searchInput'
                     placeholder='Search...'
-                    onChange={handleInputChange}/>
-                <Link to={`/search/${searchInput}`}>
-                    <button type='submit' className='search btn btn-primary'>Search</button>
-                </Link>
+                    onChange={handleInputChange}
+                    required={true}/>
+                    <button onClick={() => navigate(`/search/${formData.searchInput}`)}>Search</button>
             </form>
         </div>
      );
